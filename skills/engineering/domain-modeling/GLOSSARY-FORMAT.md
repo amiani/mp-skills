@@ -31,9 +31,9 @@ _Avoid_: Client, buyer, account
 
 ## Single vs multi-context repos
 
-**Single context (most repos):** One `GLOSSARY.md` at the repo root.
+**Single context (most projects):** One `GLOSSARY.md` at the configured domain root (repo root only when repo-local storage was chosen).
 
-**Multiple contexts:** A `GLOSSARY-MAP.md` at the repo root lists the contexts, where they live, and how they relate to each other:
+**Multiple contexts:** A `GLOSSARY-MAP.md` at the configured domain root lists the contexts, where they live, and how they relate to each other:
 
 ```md
 # Glossary Map
@@ -55,6 +55,6 @@ The skill infers which structure applies:
 
 - If `GLOSSARY-MAP.md` exists, read it to find contexts
 - If only a root `GLOSSARY.md` exists, single context
-- If neither exists, create a root `GLOSSARY.md` lazily when the first term is resolved
+- If neither exists, create `GLOSSARY.md` lazily at the configured domain root when the first term is resolved
 
 When multiple contexts exist, infer which one the current topic relates to. If unclear, ask.

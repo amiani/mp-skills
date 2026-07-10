@@ -7,6 +7,19 @@ description: Build and sharpen a project's domain model. Use when discussing cod
 
 Actively build and sharpen the project's domain model as you design. This is the *active* discipline: challenging terms, inventing edge-case scenarios, and writing the glossary and decisions down the moment they crystallise. (Merely *reading* `GLOSSARY.md` for vocabulary is not this skill: that's a one-line habit any skill can do. This skill is for when you're changing the model, not just consuming it.)
 
+## Artifact routing
+
+Before reading or writing domain documents, inspect the applicable ancestor
+`AGENTS.md` or `CLAUDE.md` and any domain configuration it points to. Explicit
+absolute routes there override every repo-relative example below. A configured
+external glossary, context map, or ADR directory belongs to the project even
+though it is outside the subject Git repository; read and update it in place and
+do not create shadow copies inside the subject repository.
+
+If no route is configured, use the file-structure defaults below only when the
+user has opted into repo-local domain docs or no subject Git repository would be
+polluted. Otherwise ask for the agent-workspace location.
+
 ## File structure
 
 Most repos have a single context:
@@ -37,7 +50,10 @@ If a `GLOSSARY-MAP.md` exists at the root, the repo has multiple contexts. The m
 │       └── docs/adr/
 ```
 
-Create files lazily: only when you have something to write. If no `GLOSSARY.md` exists, create one when the first term is resolved. If no `docs/adr/` exists, create it when the first ADR is needed.
+Create files lazily: only when you have something to write. Resolve all paths
+against the configured domain route. If no `GLOSSARY.md` exists there, create one
+when the first term is resolved. If no ADR directory exists there, create it
+when the first ADR is needed.
 
 ## During the session
 

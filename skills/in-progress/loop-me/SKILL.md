@@ -1,11 +1,19 @@
 ---
 name: loop-me
-description: Grill me about specs for the workflows I want to build, within this workspace.
+description: Grill the user about specs for workflows they want to build in a resolved workflow-design workspace.
 disable-model-invocation: true
 argument-hint: "A workflow to design, or nothing to go find one"
 ---
 
 Run a stateful `/grilling` session whose only output is **workflow** specs. Use the grilling discipline (relentless, a round of questions at a time, a recommended answer attached to each) aimed at the vocabulary and goal below. Create, edit, and delete specs as the grilling resolves things.
+
+## Artifact routing
+
+Before writing, resolve the workflow-design workspace from an explicit user
+path, ancestor `AGENTS.md`/`CLAUDE.md`, or existing `NOTES.md`. If none exists,
+ask. Do not put workflow specs inside a subject Git repository unless the user
+explicitly opts in. Resolve every relative path below against that workspace and
+record its absolute path in `NOTES.md`.
 
 ## The loop lens
 

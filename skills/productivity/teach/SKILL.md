@@ -7,9 +7,33 @@ argument-hint: "What would you like to learn about?"
 
 The user has asked you to teach them something. This is a stateful request - they intend to learn the topic over multiple sessions.
 
+## Artifact routing: choose the teaching workspace
+
+Before doing anything else, resolve the teaching workspace: the directory that
+holds every artifact below. An explicit user path or an ancestor
+`AGENTS.md`/`CLAUDE.md` route overrides the current-directory default. If an
+existing `NOTES.md` records the workspace, reuse it. If no route is established,
+ask the user to choose:
+
+1. **Current directory**: appropriate when the current directory is already a
+   dedicated learning workspace.
+2. **External workspace**: an arbitrary directory outside the subject Git
+   repository, often its parent or a topic directory under the parent's
+   `.scratch/` folder.
+
+When a subject Git repository exists, normalize both paths and do not place
+teaching artifacts inside it unless the user explicitly opts in. Record the
+chosen layout, absolute teaching-workspace path, and subject-repository path in
+the teaching workspace's `NOTES.md`. Infer and reuse established layouts without
+asking again.
+
+Every relative artifact path below resolves against the teaching workspace, not
+blindly against the process working directory.
+
 ## Teaching Workspace
 
-Treat the current directory as a teaching workspace. The state of their learning is captured in this directory in several files:
+The state of the user's learning is captured in the resolved teaching workspace
+in several files:
 
 - `MISSION.md`: A document capturing the _reason_ the user is interested in the topic. This should be used to ground all teaching. Use the format in [MISSION-FORMAT.md](./MISSION-FORMAT.md).
 - `./reference/*.html`: A directory of reference materials. These are the compressed learnings from the lessons - cheat sheets, reference algorithms, syntax, yoga poses, glossaries. They are the raw units of learning. They should be beautiful documents which print out well, and are designed for quick reference.
@@ -107,6 +131,10 @@ For skill acquisition, difficulty is the tool. Effortful retrieval is what build
 
 Each of these should be based on a **feedback loop**, where the user receives feedback on their performance. This feedback loop should be as tight as possible, giving feedback immediately - and ideally automatically.
 
+When a lesson's objective is a codeable skill, offer the user a **kata**
+afterwards: rebuild the thing from scratch against a hidden test suite. Offer
+it; do not force it.
+
 For quizzes, each answer should be exactly the same number of words (and characters, if possible). Don't give the user any clues about the answer through formatting.
 
 ## Acquiring Wisdom
@@ -137,4 +165,4 @@ Glossaries, in particular, are an essential reference. Once one is created, it s
 
 ## `NOTES.md`
 
-The user will sometimes express preferences of how they want to be taught, or things you should keep in mind. This is the place to record those preferences, so you can refer back to them when designing lessons or working with the user.
+The user will sometimes express preferences of how they want to be taught, or things you should keep in mind. This is the place to record those preferences, so you can refer back to them when designing lessons or working with the user. Also record the resolved teaching workspace and subject repository here.
