@@ -1,6 +1,6 @@
 # Domain Docs
 
-How the engineering skills should consume this repo's domain documentation when exploring the codebase.
+How the engineering skills should consume this project's domain documentation when exploring the codebase. If artifact routing is external, replace every default below with the configured absolute path; do not create repo-local shadow copies.
 
 ## Before exploring, read these
 

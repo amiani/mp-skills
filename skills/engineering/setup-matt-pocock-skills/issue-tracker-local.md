@@ -1,6 +1,6 @@
 # Issue tracker: Local Markdown
 
-Issues and specs for this repo live as markdown files in `.scratch/`.
+Issues and specs for this project live as markdown files in the configured local-tracker route. For repo-local setup that defaults to `.scratch/`; external setup must render the absolute workspace path here, and every `.scratch/` path below resolves against it.
 
 ## Conventions
 
