@@ -54,8 +54,8 @@ fi
 comm -23 "$previous" "$current" | while IFS= read -r name; do
   target="$AGENTS_DEST/$name"
   if [[ -L "$target" && "$(readlink "$target")" == "$ROOT"/* ]]; then rm "$target"; fi
-  [[ -L "$CLAUDE_DEST/$name" ]] && rm "$CLAUDE_DEST/$name"
-  [[ -L "$PI_DEST/$name" ]] && rm "$PI_DEST/$name"
+  if [[ -L "$CLAUDE_DEST/$name" ]]; then rm "$CLAUDE_DEST/$name"; fi
+  if [[ -L "$PI_DEST/$name" ]]; then rm "$PI_DEST/$name"; fi
 done
 
 # Migrate known pre-v1.1 names without touching unrelated personal skills.
