@@ -2,14 +2,14 @@
 
 ## Terms
 
-**Subject repository** — the team Git repository whose code is being read or
+**Subject repository**: the team Git repository whose code is being read or
 changed.
 
-**Agent workspace** — a personal directory outside the subject repository that
+**Agent workspace**: a personal directory outside the subject repository that
 holds durable artifacts produced by agent workflows. It may be an ancestor of
 one or more subject repositories.
 
-**Artifact route** — an explicit absolute path for one class of artifact. A
+**Artifact route**: an explicit absolute path for one class of artifact. A
 workspace is a map of routes, not necessarily one undifferentiated root.
 
 ## Resolution order
@@ -33,10 +33,11 @@ Do not repeatedly ask after a route has been established.
 
 | Route | Typical artifacts |
 |---|---|
-| Domain | `CONTEXT.md`, `CONTEXT-MAP.md`, `docs/adr/` |
+| Domain | `GLOSSARY.md`, `GLOSSARY-MAP.md`, `docs/adr/` |
 | Agent configuration | `docs/agents/`, issue tracker and label instructions |
 | Local tracker | PRDs, tickets, wayfinder maps, issue comments under `.scratch/` |
-| Research | Cited research summaries |
+| Research | Cited research summaries, exploration notes |
+| Questionnaires | `to-questionnaire-<slug>.md` (falls back to research) |
 | Rejected requests | `.out-of-scope/*.md` |
 | Teaching | `MISSION.md`, `RESOURCES.md`, `NOTES.md`, lessons, assets, references, learning records |
 | Workflow design | `workflows/*.md`, workflow-design `NOTES.md` |
@@ -81,10 +82,11 @@ Subject repositories:
 
 Routes:
 - Agent configuration: `/absolute/path/to/workspace/docs/agents/`
-- Domain glossary: `/absolute/path/to/workspace/CONTEXT.md`
+- Domain glossary: `/absolute/path/to/workspace/GLOSSARY.md`
 - ADRs: `/absolute/path/to/workspace/docs/adr/`
 - Local tracker: `/absolute/path/to/workspace/.scratch/`
 - Research: `/absolute/path/to/workspace/.scratch/research/`
+- Questionnaires: `/absolute/path/to/workspace/.scratch/questionnaires/`
 - Rejected requests: `/absolute/path/to/workspace/.out-of-scope/`
 - Teaching: choose per topic and record in that workspace's `NOTES.md`
 ```

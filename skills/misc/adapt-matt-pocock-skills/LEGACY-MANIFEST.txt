@@ -1,2 +1,4 @@
 to-issues
 to-prd
+diagnose
+write-a-skill

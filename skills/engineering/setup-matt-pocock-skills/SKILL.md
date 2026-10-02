@@ -132,7 +132,7 @@ Then write the docs files using the seed templates in this skill folder as a sta
 
 For "other" issue trackers, write `docs/agents/issue-tracker.md` from scratch using the user's description.
 
-Always write `docs/agents/artifact-routing.md`. Use absolute normalized paths for the subject repositories and each artifact route. Include agent configuration, domain glossary, ADRs, local tracker, research, rejected requests, and the rule that teaching workspaces are selected per topic and recorded in `NOTES.md`. For external setup, render every path in the other docs files as an absolute path under the configuration root.
+Always write `docs/agents/artifact-routing.md`. Use absolute normalized paths for the subject repositories and each artifact route. Include agent configuration, domain glossary, ADRs, local tracker, research, questionnaires, rejected requests, and the rule that teaching workspaces are selected per topic and recorded in `NOTES.md`. For external setup, render every path in the other docs files as an absolute path under the configuration root.
 
 ### 5. Done
 

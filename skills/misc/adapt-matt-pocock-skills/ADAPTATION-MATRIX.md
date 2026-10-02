@@ -12,9 +12,9 @@ the update complete.
 | `domain-modeling` | Glossary and ADRs | Resolve configured domain routes before repo defaults |
 | `setup-matt-pocock-skills` | Agent config, domain docs, local tracker | Support an ancestor agent workspace and render absolute paths |
 | `research` | Research summary | Use configured research route or ask |
-| `to-tickets` | Local tickets | Follow tracker config; never hard-code repo-root `tickets.md` |
+| `to-tickets` | Local tickets | Follow tracker config; per-ticket files under the configured local-tracker route |
 | `triage` | Rejected-request knowledge base | Use configured rejected-requests route |
-| `prototype` | Durable decision note | Use issue, ADR, or configured research route; code remains temporary in repo |
+| `to-questionnaire` | Questionnaire document | Use configured questionnaire route, then research route, then ask |
 | `loop-me` | Workflow specs and notes | Resolve or ask for a workflow-design workspace |
 
 ## Readers and indirect writers
@@ -27,25 +27,30 @@ the update complete.
 | `improve-codebase-architecture` | Domain docs; invokes domain modeling | Resolve configured routes; report remains in OS temp |
 | `codebase-design` | Domain vocabulary in design briefs | Use configured glossary when supplied |
 | `to-spec` | Tracker and domain docs | Resolve through ancestor config |
+| `implement-spec` | Tracker; exploration notes | Resolve tracker through ancestor config; notes go to research route or OS temp |
 | `wayfinder` | Tracker and domain docs | Resolve through ancestor config; tracker controls physical storage |
+| `pr` | Domain glossary vocabulary | Use configured glossary |
+| `wait-what` | Domain glossary vocabulary | Configured external domain route overrides repo root |
 | `ask-matt` | Routing descriptions | Describe workspace-aware behavior accurately |
 | `grill-with-docs` | Invokes domain modeling | No direct patch required while composition remains unchanged |
+| `prototype` | Answer capture in issue or commit | No patch: prototype code is kept on a throwaway branch; the answer goes to the configured tracker |
 
 ## Safe or user-selected outputs
 
 - `handoff`: OS temporary directory.
 - `improve-codebase-architecture` HTML report: OS temporary directory.
 - `writing-fragments`, `writing-shape`, `writing-beats`: user-selected path.
-- `grilling`, `grill-me`: no local artifacts.
+- `grilling`, `grill-me`, `writing-for-agents`: no local artifacts.
+- `retro`: presents candidates only; any accepted change is a project modification.
 
 ## Intentional project modifications
 
-- `implement`, `tdd`, `diagnosing-bugs`: product code and tests.
-- `prototype`: temporary runnable code, later deleted or absorbed.
-- `setup-pre-commit`, `wizard`, `scaffold-exercises`: requested repository output.
+- `implement`, `implement-spec`, `tdd`, `diagnosing-bugs`: product code and tests.
+- `prototype`: runnable prototype code on a throwaway branch.
+- `wizard`: ephemeral script plus `.env` / GitHub secrets the user asked for.
+- `setup-pre-commit`, `scaffold-exercises`: requested repository output.
 
 ## Excluded from installation
 
-- `obsidian-vault`: Matt-specific absolute vault path.
-- Deprecated skills.
+- Deprecated and removed upstream skills (`resolving-merge-conflicts`, `writing-great-skills`).
 - In-progress and personal skills unless explicitly added to the install manifest.

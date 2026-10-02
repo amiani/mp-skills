@@ -15,6 +15,7 @@ placeholders with absolute normalized paths during setup.
 - **ADRs:** `<configuration-root>/docs/adr/`
 - **Local tracker:** `<configuration-root>/.scratch/`
 - **Research:** `<configuration-root>/.scratch/research/`
+- **Questionnaires:** `<configuration-root>/.scratch/questionnaires/`
 - **Rejected requests:** `<configuration-root>/.out-of-scope/`
 - **Teaching:** choose per topic and record the absolute route in that teaching workspace's `NOTES.md`
 - **Workflow design:** choose per topic and record the absolute route in that workspace's `NOTES.md`
