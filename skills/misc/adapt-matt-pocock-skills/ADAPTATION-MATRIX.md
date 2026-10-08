@@ -22,7 +22,6 @@ the update complete.
 | Skill | Dependency | Adaptation |
 |---|---|---|
 | `code-review` | Tracker config and spec | Resolve through ancestor config; search configured tracker before repo fallbacks |
-| `tdd` | Domain glossary and ADRs | Resolve configured domain routes |
 | `diagnosing-bugs` | Domain glossary and ADRs | Resolve configured domain routes |
 | `improve-codebase-architecture` | Domain docs; invokes domain modeling | Resolve configured routes; report remains in OS temp |
 | `codebase-design` | Domain vocabulary in design briefs | Use configured glossary when supplied |
@@ -45,7 +44,7 @@ the update complete.
 
 ## Intentional project modifications
 
-- `implement`, `implement-spec`, `tdd`, `diagnosing-bugs`: product code and tests.
+- `implement`, `implement-spec`, `diagnosing-bugs`: product code and tests.
 - `prototype`: runnable prototype code on a throwaway branch.
 - `wizard`: ephemeral script plus `.env` / GitHub secrets the user asked for.
 - `setup-pre-commit`, `scaffold-exercises`: requested repository output.

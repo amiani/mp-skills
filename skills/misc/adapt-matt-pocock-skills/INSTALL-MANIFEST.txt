@@ -15,7 +15,6 @@ prototype
 research
 retro
 setup-matt-pocock-skills
-tdd
 teach
 to-questionnaire
 to-spec

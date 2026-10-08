@@ -1,3 +1,5 @@
+> **Archived.** This skill was removed from this fork after v1.3. Nothing replaces it: `implement` and `implement-spec` no longer drive a test-first loop. The page stays up for reference.
+
 ## What it does
 
 `tdd` builds a feature or fixes a bug test-first: one failing test, then just enough code to pass it, then the next behaviour. It carries the standards that make that loop produce tests worth keeping: what a good test is, where tests go, what mocks are for, and the three anti-patterns that quietly ruin a suite.
